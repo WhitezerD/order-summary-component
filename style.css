@@ -1,0 +1,207 @@
+:root {
+    --ff-primary: 'Red Hat Display', sans-serif;
+    --fs-primary: 1rem;
+    --fw-sm: 500;
+    --fw-md: 700;
+    --fw-lg: 900;
+
+    --clr-bg: hsl(225, 100%, 94%);
+    --clr-card-bg: white;
+    --clr-music-icon: hsl(224, 23%, 55%);
+    --clr-font-dark-title: hsl(223, 47%, 23%);
+    --clr-card-btn: hsl(245, 75%, 52%);
+    --clr-plan-bg: hsl(225, 100%, 98%);
+    --clr-link-active: hsla(245, 75%, 52%, 0.5);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+    background-color: var(--clr-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: inherit;
+}
+
+.container {
+    font-family: var(--ff-primary);
+    max-width: 22.5rem;
+    background-color: var(--clr-card-bg);
+    border-radius: 2rem;
+}
+
+.product-banner {
+    border-radius: 2rem 2rem 0 0;
+}
+
+.product-order-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.product-order-summary-title {
+    padding: 0.5rem 0 1rem 0;
+    color: var(--clr-font-dark-title);
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.product-summary {
+    text-align: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: var(--clr-music-icon);
+    font-weight: var(--fw-sm);
+}
+
+.product-plan {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-plan-bg);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+
+.icon-detail {
+    display: flex;
+    gap: 1rem;
+}
+
+.plan-detail-title {
+    font-weight: var(--fw-md);
+    color: var(--clr-font-dark-title);
+}
+
+.plan-detail-price {
+    font-weight: var(--fw-sm);
+    color: var(--clr-music-icon);
+}
+
+.plan-edit {
+    font-size: 0.9rem;
+    font-weight: var(--fw-md);
+    text-decoration: underline;
+    color: var(--clr-card-btn);
+    cursor: pointer;
+}
+
+.plan-edit:active {
+    color: var(--clr-link-active);
+    text-decoration: none;
+}
+
+.payment-btn {
+    width: 100%;
+    background-color: var(--clr-card-btn);
+    color: var(--clr-card-bg);
+    padding: 0.8rem;
+    border-radius: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: var(--fw-md);
+    box-shadow: 0 0.5rem 1rem 0.2rem hsla(245, 75%, 52%, 0.3);
+    cursor: pointer;
+}
+
+.payment-btn:active {
+    background-color: var(--clr-link-active);
+    color: hsla(0, 100%, 100%, .8);
+}
+
+.product-cancel {
+    color: var(--clr-music-icon);
+    font-weight: var(--fw-md);
+    cursor: pointer;
+}
+
+.product-cancel:active {
+    color: var(--clr-font-dark-title);
+}
+
+
+footer {
+    position: absolute;
+    margin-top: 40rem;
+}
+
+@media (min-width: 42.5rem){
+    .container {
+        max-width: 28.125rem;
+    }
+    footer {
+        margin-top: 45rem;
+    }
+}
